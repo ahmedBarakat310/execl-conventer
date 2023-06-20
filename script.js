@@ -10,10 +10,12 @@ const generateTable = () => {
 
     let rowsNumber = parseInt(rows.value), columnsNumber = parseInt(columns.value)
     if(rowsNumber<1 || rowInput.value=='' ){
-      Swal.fire('please enter the number of table rows')
+     alert('please enter the number of table rows')
+    //   Swal.fire('please enter the number of table rows')
     }else{
         if(columnsNumber<1 || columnInput.value==''){
-            Swal.fire('please enter the number of table columns')
+            // Swal.fire('please enter the number of table columns')
+          alert('please enter the number of table columns')
         }
         table.innerHTML = ""
         for(let i=0; i<rowsNumber; i++){
@@ -42,7 +44,8 @@ const generateTable = () => {
 
 const ExportToExcel = (type, fn, dl) => {
     if(!tableExists){
-        Swal.fire('please generate the table first')
+        // Swal.fire('please generate the table first')
+       alert('please generate the table first')
     }
     var elt = table
     var wb = XLSX.utils.table_to_book(elt, { sheet: "sheet1" })
